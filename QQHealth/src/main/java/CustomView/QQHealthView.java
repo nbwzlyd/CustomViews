@@ -14,11 +14,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import java.lang.annotation.Target;
-import java.util.Timer;
 import java.util.TimerTask;
 
-import customView.TicketView;
 import utils.DensityUtils;
 import view.lyd.com.qqhealth.R;
 
