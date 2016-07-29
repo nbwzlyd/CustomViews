@@ -3,8 +3,11 @@ package CustomView;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+
+import utils.DensityUtils;
 
 /**
  * Created by lyd10892 on 2016/7/1.
@@ -17,6 +20,8 @@ public class CustomViewGroup extends ViewGroup {
      * @param context
      */
 
+    private  Context mContext;
+
     public CustomViewGroup(Context context) {
         this(context, null);
     }
@@ -27,6 +32,7 @@ public class CustomViewGroup extends ViewGroup {
 
     public CustomViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mContext = context;
     }
 
     //计算父view的宽高
@@ -61,6 +67,7 @@ public class CustomViewGroup extends ViewGroup {
             childWidth = getPaddingLeft() + getPaddingRight() + childView.getMeasuredWidth() + params.leftMargin + params.rightMargin;
             childHeight = getPaddingBottom() + getPaddingTop() + childView.getMeasuredHeight() + params.topMargin + params.bottomMargin;
 
+            //wrapContent情况下需要计算宽度和高度
             if (i == 0 || i == 1) {
                 desireWidth1 += childWidth;
             }
@@ -90,6 +97,8 @@ public class CustomViewGroup extends ViewGroup {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Log.i("getWidth","getWidth==="+getWidth()+"getHeight==="+getHeight()+"measureWidth"+getMeasuredWidth()+"measureHeight"+getMeasuredHeight());
+        Log.i("iiiii===",DensityUtils.dp2px(mContext,50)+"");
     }
 
     @Override

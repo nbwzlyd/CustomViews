@@ -1,6 +1,7 @@
 package CustomView;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.ViewGroup;
 
 /**
@@ -9,6 +10,12 @@ import android.view.ViewGroup;
 public class JianHangView extends ViewGroup {
     public JianHangView(Context context) {
         super(context);
+    }
+
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
     }
 
     @Override
