@@ -7,6 +7,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Scroller;
 
 /**
  * Created by lyd10892 on 2016/7/28.
@@ -15,8 +16,12 @@ import android.view.View;
 public class StickyPoint extends View {
 
     private static final int MAX_PULL = 15;//最大的下拉距离,超过该距离则直接
+
+    private static final int C = 1;
     private VPoint mVpoint = new VPoint();
     private HPoint mHpoint = new HPoint();
+    private Scroller mScroller;
+    private Context mContext;
 
 
     private Paint mPointPaint;
@@ -33,6 +38,12 @@ public class StickyPoint extends View {
 
     public StickyPoint(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mContext = context;
+        init();
+    }
+
+    private void init() {
+        mScroller = new Scroller(mContext);
     }
 
     @Override

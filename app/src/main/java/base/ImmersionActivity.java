@@ -1,9 +1,9 @@
 package base;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
  *
  * */
 
-public class ImmersionActivity extends Activity {
+public class ImmersionActivity extends AppCompatActivity {
 
 	private int mStatusBarColor = Color.parseColor("#FF4500");
 

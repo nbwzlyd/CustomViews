@@ -16,6 +16,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import base.ImmersionActivity;
+import fragment.CircleProgressFragment;
 import fragment.CustomViewGroupFragment;
 import fragment.QQhealthFragment;
 import fragment.TicketViewFragment;
@@ -61,9 +63,11 @@ public class MainActivity extends AppCompatActivity {
         mTicketFragment = new TicketViewFragment();
         mQQHealthFragment = new QQhealthFragment();
         mCustomViewGroupFra = new CustomViewGroupFragment();
+        CircleProgressFragment fragment = new CircleProgressFragment();
         mFragmentList.add(mTicketFragment);
         mFragmentList.add(mQQHealthFragment);
         mFragmentList.add(mCustomViewGroupFra);
+        mFragmentList.add(fragment);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.main_recyclerView_id);
         mNavigationAdapter = new NavigationAdapter();
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         mTitleList.add("优惠券");
         mTitleList.add("qq健康");
         mTitleList.add("自定义viewGroup");
+        mTitleList.add("进度条");
 
     }
 
